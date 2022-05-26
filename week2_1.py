@@ -1,11 +1,6 @@
-# Write program to check if person if of legal drinking age (18 Norway, 21 USA)
+usa = ["us","the us","usa"]
 
-# Ask user their name (must have two names)
-
-
-usa = {"us","the us","usa"}
-
-norway = {"norway","norge","nor"}
+norway = ["norway","norge","nor"]
 
 legal_usa = 2001
 legal_nor = 2004
@@ -13,18 +8,19 @@ legal_nor = 2004
 while True:
     print("Hello Welcome to cheapbooze.net!")
     first_name,last_name = input("May I ask you your first and last name?: ").split()
-    nationality = input(f'Nice to have you here {first_name}. From which country are you currently browsing?: ').strip()
-    if nationality in norway or usa:
+    nationality = str(input(f'Nice to have you here {first_name}. From which country are you currently browsing?: ').strip().lower())
+
+    if nationality in norway or nationality in usa:
        age = int(input("Thats a glorious country. May we know which year you were born?: "))
+
     else: print("sorry we only serve customers from the US and Norway atm")
 
-    if nationality == usa and age <= legal_usa or nationality == norway and age <= legal_nor:
-        print("Happy shopping!")
+        if nationality in usa and age <= legal_usa or nationality in norway and age <= legal_nor:
+        congrats = print(f'Congratulations {first_name} {last_name}! Since you are from {nationality} and born in {age} you qualify to make a purchase from us')
     else:
         print ("Sorry you seem to be too young to buy alcohol")
-          
-
-
+         
+len(congrats.split()) 
 #NOTE: Below are just some codes I tried to implement but coudlnt get to work. 
 
 #else: input(''' I didn't get your name properly. Can you please give me your first and last name again?''')
